@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Rapport de projet</title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.18.2"></script>
+  <script type="text/javascript" src="d3.v7.min.js"></script>
+  <script type="text/javascript" src="d3-geo-projection.v4.min.js"></script>
+  <script type="text/javascript" src="dynamic-time-warping.min.js"></script>
+  <!-- Your code -->
+  <script type="text/javascript" src="graphic.js"></script>
+  <script type="text/javascript" src="data.js"></script>
+  <style>
+    #gridLayout {
+      display: inline-grid;
+      position: absolute;
+      overflow: hidden;
+      margin: 0%;
+      width: 99%;
+      height: 99%;
+      grid-template-columns: 60% 40%;
+      grid-template-rows: 50% 50%;
+      font-size: 10px;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      font-family: sans-serif;
+    }
+
+    #mapBox {
+      width: 100%;
+      height: 100%;
+    }
+
+    #mapArea {
+      border-right: 1px black solid;
+      grid-area: 1 / 1 / 3 / 2;
+    }
+
+    #barFirstTurn {
+      grid-area: 1 / 2 / 2 / 2;
+    }
+
+    #barSecondTurn {
+      grid-area: 2 / 2 / 2 / 2;
+    }
+
+    .area {
+      stroke: black;
+      stroke-width: 1;
+    }
+
+    .areaLabel {
+      display: none;
+    }
+
+    .areaName {
+      fill: #FFFAFF;
+    }
+
+    .title {
+      display: flex;
+      justify-content: center;
+      font-size: xx-large;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .subtitle {
+      display: flex;
+      justify-content: center;
+      font-size: large;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .areaLabelBackground {
+      fill: #30BCED;
+    }
+  </style>
+</head>
+
+<body onload="createViz()">
+  <div id="gridLayout">
+    <div id="mapArea">
+      <text class="title"></text>
+      <text class="subtitle"></text>
+      <div id="mapBox"></div>
+    </div>
+    <div id="barFirstTurn"></div>
+    <div id="barSecondTurn"></div>
+  </div>
+</body>
+
+</html>

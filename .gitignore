@@ -1,0 +1,4 @@
+*.csv
+*.json
+*.geojson
+custom_datasets/*
